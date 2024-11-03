@@ -16,7 +16,7 @@ void passwordManager(int length) {
     cout << "Do you want to save password [Yes or No]: ";
     string confirmation;
     cin >> confirmation;
-    if(confirmation == "Yes" || "yes") {
+    if(confirmation == "Yes") {
         ofstream MyFile("savedPassword.txt", ios::app);
         string username;
         cout << "Username/Email: ";
@@ -28,7 +28,7 @@ void passwordManager(int length) {
         string check;
         cout << "Do you want to check saved passwords [Yes or No]: ";
         cin >> check;
-        if(check == "Yes" || "yes") {
+        if(check == "Yes") {
             ifstream file;
             file.open("savedPassword.txt");
             if(file.is_open()) {
@@ -45,14 +45,14 @@ void passwordManager(int length) {
                 cout << "Failed to open file" << endl;
             }
         }
-        else if(check == "No" || "no") {
+        else if(check == "No") {
             cout << "Thank you" << endl;
         }
         else {
             cout << "Invalid operation, Please try again later" << endl;
         }
     }
-    else if(confirmation == "No" || "no") {
+    else if(confirmation == "No") {
         cout << "Password Not Saved" << endl;
     }
     else {
