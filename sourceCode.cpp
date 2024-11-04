@@ -34,7 +34,7 @@ void passwordManager(int length) {
             if(file.is_open()) {
                 string data;
                 getline(file, data);
-                
+
                 while(!file.eof()) {
                     getline(file, data);
                     cout << data << "\n";
@@ -49,20 +49,30 @@ void passwordManager(int length) {
             cout << "Thank you" << endl;
         }
         else {
-            cout << "Invalid operation, Please try again later" << endl;
+            cout << "Invalid operation, Please try again" << endl;
         }
     }
     else if(confirmation == "No") {
         cout << "Password Not Saved" << endl;
     }
     else {
-        cout << "Invalid operation, Please try again later" << endl;
+        cout << "Invalid operation, Please try again" << endl;
     }
 }
 int main() {
-    cout << "Password Length: ";
     int length;
-    cin >> length;
+    cout << "Password Length: ";
+    while(1) {
+        cin >> length;
+        if(cin.fail()) {
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            cout << "Invalid input. Please enter an integer: ";
+        }
+        else {
+            break;
+        }
+    }
     passwordManager(length);
     return 0;
 }
