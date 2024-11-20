@@ -1,4 +1,2 @@
-<p> This project is a simple password manager written in <b>C++</b>. It generates random passwords of a specified length, saves them to a file if desired, and allows users to review saved passwords.
+<p> This project is a simple password manager written in C++. It generates random passwords of a specified length, saves them to a file if desired, and allows users to review saved passwords.
 </p>
-<br/>
-<b> Author - Md. Shazzad Hosen Zisan </b>
